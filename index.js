@@ -11,10 +11,10 @@ app.use(express.json())
 dotenv.config();
 app.use(cors())
 
-app.use(express.static(path.join(__dirname,"./client/build")));
+app.use(express.static(path.join(__dirname,"./new_profile/build")));
 
 app.get("*",function(_,res){
-    res.sendFile(path.join(__dirname,"./client/build/index.html"),function(error){
+    res.sendFile(path.join(__dirname,"./new_profile/build/index.html"),function(error){
         res.status(500).send(error)
     })
 })
